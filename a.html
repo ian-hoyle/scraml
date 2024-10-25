@@ -62,8 +62,9 @@ function renderTable(properties, order) {
     container.innerHTML = ''; // Clear any existing table
 
     const table = document.createElement('table');
+    table.className = "govuk-table";
     const headerRow = document.createElement('tr');
-
+    headerRow.className = "govuk-table__header";
     // Split order into array for dynamic column arrangement
     const headers = order.split(',');
 
