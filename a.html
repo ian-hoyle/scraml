@@ -79,11 +79,12 @@ function renderTable(properties, order) {
     // Populate rows with data in the selected order
     for (const [propertyName, propertyData] of Object.entries(properties)) {
         const row = document.createElement('tr');
+        row.className = "govuk-table__row";
 
         // For each column in the selected order, add the appropriate cell content
         headers.forEach(key => {
             const cell = document.createElement('td');
-            
+            cell.className = "govuk-table__cell";
             if (key === "property") {
                 cell.textContent = propertyName;
             } else if (key === "type") {
