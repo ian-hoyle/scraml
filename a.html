@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+a<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -87,7 +87,7 @@ const json = 	{
 };
        
 // Fetch JSON data with no-cors mode
-fetch('https://github.com/nationalarchives/da-metadata-schema/blob/main/metadata-schema/baseSchema.schema.json', { mode: 'no-cors' })
+fetch('schema.json')
     .then(response => response.json())
     .then(json => {
         const properties = json.properties;
