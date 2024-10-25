@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://govuk-frontend.apps.platform.digital.mod.uk/govuk-frontend-3.12.0.min.css">
     <title>Display JSON Properties in Table</title>
     <style>
         table {
@@ -21,11 +22,11 @@
 </head>
 <body>
 
-<h2>Base schmea Alternate Names</h2>
+<h2 class="govuk-heading-l">Base schmea Alternate Names</h2>
 
 <!-- Dropdown menu for selecting column order -->
-<label for="columnOrder">Select Column Order:</label>
-<select id="columnOrder">
+<label for="columnOrder" class="govuk-label">Select Column Order:</label>
+<select id="columnOrder" class="govuk-select">
     <option value="tdrFileHeader,property,type,tdrDataLoadHeader">tdrFileHeader, Property, Type, tdrDataLoadHeader</option>
     <option value="property,type,tdrFileHeader,tdrDataLoadHeader">Property, Type, tdrFileHeader, tdrDataLoadHeader</option>
     <option value="type,property,tdrDataLoadHeader,tdrFileHeader">Type, Property, tdrDataLoadHeader, tdrFileHeader</option
@@ -38,54 +39,6 @@
 
 <script>
 
-const json = 	{
-  "$id": "/schema/baseSchema",
-  "type": "object",
-  "properties": {
-    "client_side_checksum": {
-      "type": "string",
-      "propertyType": "System",
-      "minLength": 64,
-      "maximum": 64,
-      "alternateKeys": [
-        {
-          "tdrDataLoadHeader": "SHA256ClientSideChecksum"
-        }
-      ]
-    },
-    "file_size": {
-      "propertyType": "System",
-      "type": "integer",
-      "minimum": 0,
-      "alternateKeys": [
-        {
-          "tdrDataLoadHeader": "ClientSideFileSize"
-        }
-      ]
-    },
-    "UUID": {
-      "type": "string",
-      "format": "uuid",
-      "propertyType": "System",
-      "alternateKeys": [
-        {
-          "tdrFileHeader": "UUID"
-        }
-      ]
-    },
-    "file_path": {
-      "type": "string",
-      "propertyType": "System",
-      "minLength": 1,
-       "alternateKeys": [
-        {
-          "tdrFileHeader": "Filepath",
-          "tdrDataLoadHeader": "ClientSideOriginalFilepath"
-        }
-      ]
-    }
-    }
-};
        
 // Fetch JSON data with no-cors mode
 fetch('schema.json')
