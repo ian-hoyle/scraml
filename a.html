@@ -5,21 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@5.7.1/dist/govuk/govuk-frontend.min.css">
     <title>Display JSON Properties in Table</title>
-    <style>
-        table {
-            width: 80%;
-            margin-top: 20px;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
+  </head>
 <body>
 
 <h2 class="govuk-heading-l">Base schmea Alternate Names</h2>
@@ -40,7 +26,7 @@
 <script>
 
        
-// Fetch JSON data with no-cors mode
+
 fetch('schema.json')
     .then(response => response.json())
     .then(json => {
